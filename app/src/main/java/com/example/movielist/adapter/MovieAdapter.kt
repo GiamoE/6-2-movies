@@ -23,15 +23,6 @@ class MovieAdapter(private val movies: List<Movie>, private val onClick: (Movie)
         )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(movies[position])
-    }
-
-    override fun getItemCount(): Int {
-        return movies.size
-    }
-
-
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         init {
             itemView.setOnClickListener {
@@ -43,5 +34,13 @@ class MovieAdapter(private val movies: List<Movie>, private val onClick: (Movie)
             Glide.with(context).load(movie.getPosterUrl())
                 .into(itemView.ivMovie)
         }
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(movies[position])
+    }
+
+    override fun getItemCount(): Int {
+        return movies.size
     }
 }

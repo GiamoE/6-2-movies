@@ -7,18 +7,18 @@
     tools:context=".view.MainActivity">
 
     <TextView
-        android:id="@+id/tvMostPopular"
+        android:id="@+id/tvPopular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/most_popular_movies"
+        android:text="@string/popular_movies"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/btnSubmit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnSubmit" />
 
     <EditText
-        android:id="@+id/etYear"
+        android:id="@+id/etYearRelease"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -28,7 +28,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/btnSubmit"
         app:layout_constraintEnd_toStartOf="@id/btnSubmit"
-        app:layout_constraintStart_toEndOf="@id/tvMostPopular"
+        app:layout_constraintStart_toEndOf="@id/tvPopular"
         app:layout_constraintTop_toTopOf="@id/btnSubmit" />
 
     <Button

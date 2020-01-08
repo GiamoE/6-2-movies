@@ -33,14 +33,14 @@ class MainActivity : AppCompatActivity() {
         rvMovies.adapter = movieAdapter
 
         btnSubmit.setOnClickListener {
-            viewModel.getMovies(etYear.text.toString())
+            viewModel.getMovies(etYearRelease.text.toString())
         }
     }
 
     private fun initViewModel() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
-        viewModel.movies.observe(this, Observer {
+        viewModel.movieList.observe(this, Observer {
             movies.clear()
             movies.addAll(it)
             movieAdapter.notifyDataSetChanged()
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startMovieDetailActivity(movie: Movie) {
-        val intent = Intent(this, MovieDetailActivity::class.java)
+        val intent = Intent(this, MovieSummaryActivity::class.java)
         intent.putExtra("Movie", movie)
         startActivity(intent)
     }
